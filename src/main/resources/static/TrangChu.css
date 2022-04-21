@@ -1,0 +1,180 @@
+*
+{
+	box-sizing: border-box;
+	padding: 0;
+	margin:0;
+}
+.trangchu
+{
+	background-color:#212529;
+	padding: 0;
+	margin:0;
+}
+.container_trangchu
+{
+	padding:0;
+	margin: 0;
+}
+.header
+{
+	width: 100%;
+	height: 60px;
+	background-color:#212529;
+	
+}
+.header_left
+{
+	width: 85%;
+	float: left;
+	margin-top: 10px;
+}
+.header_right
+{
+	width: 15%;
+	float: left;
+	margin-top: 10px;
+}
+
+.header_left a
+{
+	color: rgb(238, 188, 29);
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 10vw;
+	margin-top: 10px;
+	text-decoration: none;
+}
+.login
+{
+	height: 30px;
+	width: 60px;
+	text-align: center;
+	background-color: rgb(238, 188, 29);
+	border-radius: 5px;
+}
+.header_right a
+{
+	background-color: rgb(238, 188, 29);
+	color: black;
+	text-decoration: none;
+
+}
+.carouselCoin
+{
+	background-image: url("../images/background.jpg");
+	 background-repeat: no-repeat;
+     width: 100%;
+     background-size: cover;
+     padding-top: 250px;
+	height: 420px;
+}
+
+.item a
+ {
+      text-decoration: none;
+      text-align: center;
+      color: #ffffff;
+      font-size: 15px;
+    }
+ .item span
+ {
+ 	font-size: 15px;
+ }
+  .item
+     {
+      height: 200px;
+      width: 150px;
+      color: #ffffff;
+     }
+ .Content
+ {
+
+ 	text-align: center;
+ 	width: 100%;
+ 	padding-left: 5vw;
+ 	padding-right: 5vw;
+ 	padding-top: 15px;
+ 	background-color:#212529;
+ }
+ .Content p
+ {
+ 	font-size: 3vw;
+ 	color: white;
+ }
+ .SearchCoin
+ {
+ 	position: relative;
+ 	margin: 20px 0;
+ }
+
+.SearchCoin label
+{
+position: absolute;
+top:0;
+font-size: 16px;
+margin:10px;
+padding:0 10px;
+cursor: text;
+background-color: #212529;
+color: gray;
+transition:  top 0.2s ease-in-out;
+}
+.SearchCoin .active
+{
+	top:-20px;
+
+}
+.SearchCoin .boxx
+{
+	width: 100%;
+	height: 65px;
+	padding: 12px 10px;
+	border: 1px solid gray;
+	background-color: #212529;
+	color: gray;
+	border-radius: 3px;
+
+}
+.SearchCoin .box:focus
+{
+	outline: none;
+}
+#search
+{
+
+}
+.coin
+  {
+    height: 100px;
+    width: 100%;
+  }
+   .coin img
+   {
+    height: 70px;
+    width: 70px;
+   }
+  
+  .Content .TieuDe th
+  {
+    background-color: rgb(238, 188, 29);
+    height: 50px;
+    color: black;
+
+  }
+  .coin .Coin_Price
+   {
+    padding-top:30px;
+  }
+  
+  .coin .Coin_24hChange
+  {
+padding-top:30px;
+  }
+  .coin .Coin_MarketCap
+  {
+    padding-top:30px;
+  }
+
+
+
+

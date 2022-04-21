@@ -1,0 +1,80 @@
+@media only screen and (max-width: 740px) {
+    .detail {
+        display: block;
+    }
+
+    .detail__coin-chart-button {
+        font-size: 1.2rem;
+        height: auto;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #ffd700;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+    }
+
+    .detail__coin-chart {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .detail__coin-info {
+        width: 100%;
+    }
+
+    .detail__coin-chart {
+        width: 100%;
+    }
+
+    .detail__coin-info {
+        border: none;
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+    .detail {
+        display: block;
+    }
+
+    .detail__coin-rank,
+    .detail__coin-current,
+    .detail__coin-price,
+    .detail__coin-market,
+    .detail__coin-cap {
+        justify-content: center;
+    }
+
+    .detail__coin-chart-button {
+        font-size: 1.2rem;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #ffd700;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+    }
+
+    .detail__coin-logo-img {
+        width: 25%;
+    }
+
+    .detail__coin-chart {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .detail__coin-chart {
+        width: 100%;
+    }
+
+    .detail__coin-info {
+        width: 100%;
+    }
+
+    .detail__coin-info {
+        border: none;
+    }
+} 

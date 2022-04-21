@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/assets/css/index/floating-labels.css}">
+    <link th:href="@{/assets/css/index/base.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/index/main.css}"  rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap' rel='stylesheet' type='text/css'>
+  </head>
+  <style>
+    @media only screen and (max-width: 740px) {
+      .detail {
+        display: block;
+      }
+
+      .detail__coin-chart-button {
+        font-size: 1.2rem;
+        height: auto;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #ffd700;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+      }
+
+      .detail__coin-chart {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+      }
+
+      .detail__coin-info {
+        width: 100%;
+      }
+
+      .detail__coin-chart {
+        width: 100%;
+      }
+
+      .detail__coin-info {
+        border: none;
+      }
+    }
+
+    @media only screen and (min-width: 740px) and (max-width: 1024px) {
+      .detail {
+        display: block;
+      }
+
+      .detail__coin-rank,
+      .detail__coin-current,
+      .detail__coin-price,
+      .detail__coin-market,
+      .detail__coin-cap {
+        justify-content: center;
+      }
+
+      .detail__coin-chart-button {
+        font-size: 1.2rem;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #ffd700;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+      }
+
+      .detail__coin-logo-img {
+        width: 25%;
+      }
+
+      .detail__coin-chart {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+      }
+
+      .detail__coin-chart {
+        width: 100%;
+      }
+
+      .detail__coin-info {
+        width: 100%;
+      }
+
+      .detail__coin-info {
+        border: none;
+      }
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: Montserrat;
+      background-color: #14161a;
+    }
+
+    .detail {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .detail__coin-info {
+      display: block;
+      width: 35%;
+      border-right: 2px solid gray;
+    }
+
+    .detail__coin-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .detail__coin-logo-img {
+      width: 50%;
+    }
+
+    .detail__coin-name {
+      text-align: center;
+      color: white;
+      font-size: 3.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .detail__coin-about {
+      margin: 20px 25px 0 25px;
+      text-align: start;
+      letter-spacing: 0.00938em;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: white;
+      text-align: justify;
+    }
+
+    .detail__coin-rank,
+    .detail__coin-current,
+    .detail__coin-price,
+    .detail__coin-market,
+    .detail__coin-cap {
+      margin: 20px 25px 0 25px;
+      display: flex;
+      color: white;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .detail__coin-rank-key {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .detail__coin-rank-value {
+      font-size: 1.6rem;
+      margin-left: 10px;
+      font-weight: 400;
+    }
+
+    .detail__coin-chart {
+      width: 65%;
+      padding: 50px 30px 0 30px;
+    }
+
+    .detail__coin-chart-button-list {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .detail__coin-chart-button {
+      font-size: 1.2rem;
+      padding: 10px 0;
+      width: 23%;
+      font-weight: 500;
+      border-radius: 4px;
+      border: 1px solid #ffd700;
+      background-color: transparent;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .detail__coin-chart-button.active {
+      background-color: #ffd700;
+      color: #14161a;
+    }
+
+    .detail__coin-chart-button:hover {
+      background-color: #ffd700;
+      color: #14161a;
+    }
+
+    .chart {
+      display: none;
+    }
+
+    .chart.active {
+      display: block;
+    }
+  </style>
+  <body>
+  <header>
+    <div class="container-xl">
+      <div class="row px-xl-4 align-items-center">
+        <div class="header-left col-6">
+          <h6 class="header-left__logo">
+            <a th:href="@{'/'+${urlTienTe}+'/'}" style="display: inline-block;padding-left: 136px;padding-top: 23px;">Crypto Hunter</a>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="detail">
+      <div class="detail__coin-info">
+        <div class="detail__coin-logo">
+          <img  th:src="${crypto.image}"  alt=""
+                class="detail__coin-logo-img">
+        </div>
+        <h1 class="detail__coin-name">[[${crypto.name}]]</h1>
+        <div class="detail__coin-rank">
+          <div class="detail__coin-rank-key">Rank:</div>
+          <div class="detail__coin-rank-value">[[${crypto.marketCapRank}]]</div>
+        </div>
+        <div class="detail__coin-current">
+          <div class="detail__coin-rank-key">Cureent Price</div>
+          <div class="detail__coin-rank-value">[[${crypto.currentPrice}]] [[${kyHieu}]]</div>
+        </div>
+        <div class="detail__coin-market">
+          <div class="detail__coin-rank-key">Market Cap:</div>
+          <div class="detail__coin-rank-value"> [[${crypto.marketCap}]]</div>
+        </div>
+      </div>
+      <div class="detail__coin-chart">
+        <div class="chart active">
+          <canvas id="myChart1"></canvas>
+        </div>
+        <div class="chart">
+          <canvas id="myChart2"></canvas>
+        </div>
+        <div class="chart">
+          <canvas id="myChart3"></canvas>
+        </div>
+        <div class="chart">
+          <canvas id="myChart4"></canvas>
+        </div>
+        <div class="detail__coin-chart-button-list">
+          <button class="detail__coin-chart-button active">24 Hours</button>
+          <button class="detail__coin-chart-button">30 Days</button>
+          <button class="detail__coin-chart-button">3 Months</button>
+          <button class="detail__coin-chart-button">1 Year</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll(".detail__coin-chart-button");
+      const charts = document.querySelectorAll(".chart");
+
+      buttons.forEach((button, index) => {
+        const chart = charts[index];
+
+        button.onclick = function () {
+          document.querySelector(".chart.active").classList.remove("active");
+          document
+            .querySelector(".detail__coin-chart-button.active")
+            .classList.remove("active");
+
+          this.classList.add("active");
+          chart.classList.add("active");
+        };
+      });
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+      const ctx1 = document.getElementById('myChart1').getContext('2d');
+      const DATA_COUNT1 = 24;
+      const labels1 = [[${timeArrDay}]];
+      const dataDay = [[${priceArrDay}]];
+      const myChart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: labels1,
+          datasets: [{
+            label: 'Price ( Past 1 Days ) in INR',
+            data: dataDay,
+            borderColor: [
+              '#ffd700'
+            ],
+            borderWidth: 4
+          }]
+        }
+      });
+
+
+      const ctx2 = document.getElementById('myChart2').getContext('2d');
+      const labels2 = [[${timeArrMonth}]];
+      const dataMonth = [[${priceArrMonth}]];
+      const myChart2 = new Chart(ctx2, {
+        type: 'line',
+        data: {
+          labels: labels2,
+          datasets: [{
+            label: 'Price ( Past 30 Days ) in INR',
+            data: dataMonth,
+            borderColor: [
+              '#ffd700'
+            ],
+            borderWidth: 4
+          }]
+        }
+      });
+      const ctx3 = document.getElementById('myChart3').getContext('2d');
+      const labels3 =  [[${timeArr3Month}]];
+      const data3Month = [[${priceArr3Month}]];
+      const myChart3 = new Chart(ctx3, {
+        type: 'line',
+        data: {
+          labels: labels3,
+          datasets: [{
+            label: 'Price ( Past 90 Days ) in INR',
+            data: data3Month,
+            borderColor: [
+              '#ffd700'
+            ],
+            borderWidth: 4
+          }]
+        }
+      });
+
+      const ctx4 = document.getElementById('myChart4').getContext('2d');
+      const labels4 =  [[${timeArr12Month}]];
+      const data12Month = [[${priceArr12Month}]];
+      const myChart4 = new Chart(ctx4, {
+        type: 'line',
+        data: {
+          labels: labels4,
+          datasets: [{
+            label: 'Price ( Past 365 Days ) in INR',
+            data: data12Month,
+            borderColor: [
+              '#ffd700'
+            ],
+            borderWidth: 4
+          }]
+        }
+      });
+
+
+
+
+    </script>
+  </body>
+</html>

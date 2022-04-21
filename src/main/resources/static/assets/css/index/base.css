@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box !important;
+    list-style: none !important;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    color: white !important;
+    background-color: #14161a;
+}
+
+.text-green {
+    color: rgb(14, 203, 129) !important;
+}
+
+.text-red {
+    color: red !important;
+}
+
+.nice-select {
+    background-color: transparent;
+}
+
+.nice-select .list {
+    background-color: #424242;
+}
+
+.nice-select .option.focus, 
+.nice-select .option.selected.focus, 
+.nice-select .option:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.form-label-group input {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.23);
+}
+
+.form-label-group input:hover {
+    border-color: white;
+    transition: .0s;
+}
+
+.pagination .page-item button {
+    color: gold;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: 0.25s;
+    margin: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ellipsis,
+.pagination .page-item.disabled button {
+    pointer-events: none;
+}
+
+.pagination .page-item button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.pagination .page-item.disabled button {
+    opacity: 0.4;
+}
+
+.pagination .page-item.active button {
+    background-color: rgba(255, 255, 255, 0.16);
+}

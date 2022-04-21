@@ -1,0 +1,146 @@
+header .row {
+    height: 64px;
+}
+
+.header-left__logo {
+    margin-bottom: 0;
+}
+
+.header-left__logo a {
+    color: gold;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.0075em;
+}
+
+.banner {
+    background-image: url("/assets/img/banner.jpg");
+}
+
+.banner .row {
+    height: 400px;
+    padding-top: 1.5rem;
+}
+
+.banner__heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner__heading h2 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 3.75rem;
+}
+
+.banner__heading h6 {
+    color: darkgrey;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+}
+
+.coin-slide {
+    margin: 1.5rem 0;
+}
+
+.coin-slide__item {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coin-slide-item__info span:first-child {
+    color: white;
+}
+
+.coin-slide-item__info span:last-child {
+    font-weight: 500;
+}
+
+.coin-slide__item > span {
+    color: white;
+    font-size: 1.3rem; 
+    font-weight: 500;
+}
+
+.coin-slide__item img {
+    height: 80px;
+    width: 80px !important;
+}
+
+.search-btn {
+    color: white;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.23);
+    border-width: 1px 1px 1px 0px;
+}
+
+.search-btn:hover {
+    color: white;
+}
+
+.coin-list h4 {
+    font-size: 2.125rem;
+    margin: 1.2rem 0;
+    font-weight: 400;
+}
+
+.coin-list__table {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.coin-list__table thead {
+    background-color: gold;
+}
+
+.coin-list__table thead th {
+    font-weight: 700;
+    color: black;
+}
+
+.coin-list__table thead th,
+.coin-list__table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(81, 81, 81, 1) !important;
+}
+
+.coin-list__table thead th:not(:first-child),
+.coin-list__table tbody td:not(:first-child) {
+    text-align: right;
+}
+
+.coin-list__table tbody td {
+    color: white;
+}
+
+.coin-list__table tbody tr:hover {
+    background-color: #131111;
+    cursor: pointer;
+}
+
+.coin-list__table tbody td:first-child {
+    display: flex;
+}
+
+.coin-list__table tbody td > img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.coin-list-cell__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-list-cell__info span:first-child {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.coin-list-cell__info span:last-child {
+    color: darkgrey;
+}
